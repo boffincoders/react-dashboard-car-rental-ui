@@ -7,9 +7,17 @@ import car3 from "./image/car3.png";
 import car4 from "./image/car4.png";
 import car5 from "./image/car5.png";
 import React, { Component, useState } from "react";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
 function App() {
   const [sidebarVisibility, setSidebarVisibility] = useState(true);
+  const [age, setAge] = React.useState("");
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
   return (
     <div className="App">
       <section className="dashboard">
@@ -73,7 +81,7 @@ function App() {
         >
           <div className="col-sm-12">
             <div className="statistics">
-              <h6
+              <span
                 type="button"
                 className="title"
                 onClick={() => {
@@ -81,7 +89,7 @@ function App() {
                 }}
               >
                 &#9776;Dashboard
-              </h6>
+              </span>
               {sidebarVisibility}
               <div className="row topbar">
                 <div className="col-sm-10">
@@ -103,32 +111,24 @@ function App() {
                 </div>
                 <div className="col-sm-2">
                   <div className="profile">
-                    <div className="dropdown">
-                      <button
-                        type="button"
-                        className="btn btn-primary dropdown-toggle"
-                        data-bs-toggle="dropdown"
-                      >
+                    <FormControl
+                      variant="standard"
+                      sx={{ m: 1, minWidth: 120 }}
+                    >
+                      <InputLabel id="demo-simple-select-standard-label">
                         Bruno Silva
-                      </button>
-                      <ul className="dropdown-menu">
-                        <li>
-                          <a className="dropdown-item" href="#">
-                            Link 1
-                          </a>
-                        </li>
-                        <li>
-                          <a className="dropdown-item" href="#">
-                            Link 2
-                          </a>
-                        </li>
-                        <li>
-                          <a className="dropdown-item" href="#">
-                            Link 3
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
+                      </InputLabel>
+                      <Select
+                        labelId="demo-simple-select-standard-label"
+                        id="demo-simple-select-standard"
+                        value={age}
+                        onChange={handleChange}
+                        label="Age"
+                      >
+                        <MenuItem value={10}>PRofile</MenuItem>
+                        <MenuItem value={20}>Setting</MenuItem>
+                      </Select>
+                    </FormControl>
                   </div>
                 </div>
               </div>
