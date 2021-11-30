@@ -68,3 +68,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  
+  Dsahboard === https://github.com/boffincoders/react-dashboard-car-rental-ui/blob/3504501366d074af8e96277e8539bc82050868af/Dashboard%20-%2030%20November%202021.gif
